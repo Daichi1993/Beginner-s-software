@@ -11,6 +11,17 @@ use View;
 
 class UtentiController extends Controller {
 
+    public function index() {
+
+        return view('utenti.index');
+
+    }
+
+    public function lista_utenti() {
+
+        return view('utenti.utenti');
+    }
+
     public function list() {
         try {
 
@@ -45,25 +56,24 @@ class UtentiController extends Controller {
     }
 
     public function update(Request $request, $id, $values = NULL) {
- 
+
         $query = "UPDATE utenti u INNER JOIN stipendi S ON u.id=s.fk_id_utente SET ";
         $par = "";
-           
-                foreach ($request->values as $key => $value) {
-                    if (isset($request->values[$key]));
-                    {
-                        if ($par != '') {
-                            $par .= ',';
-                        }
-                        $par .= "$key='$value'";
 
-                    }
-
+        foreach ($request->values as $key => $value) {
+            if (isset($request->values[$key]));
+            {
+                if ($par != '') {
+                    $par .= ',';
                 }
-                $query .= $par;
-                $query .= "WHERE u.id=$id";
-                DB::select(DB::raw("$query"));
- 
+                $par .= "$key='$value'";
+
+            }
+
+        }
+        $query .= $par;
+        $query .= "WHERE u.id=$id";
+        DB::select(DB::raw("$query"));
 
     }
 
@@ -85,22 +95,6 @@ class UtentiController extends Controller {
             'data_percepito' => $request->data_percepito
 
         ]);
-    }
-
-    public function index() {
-
-        return view('pagina_iniziale.persona1');
-
-    }
-
-    public function menu_user() {
-        try {
-
-        } catch (Throwable $e) {
-
-            return false;
-        }
-
     }
 
 }

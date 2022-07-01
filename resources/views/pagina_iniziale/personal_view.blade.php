@@ -49,7 +49,7 @@
     dataSource: {
       store: {
         type: 'odata',
-        url: "{{route('list')}}",
+        url: "{{route('utenti.list')}}",
         key: 'Id',
         beforeSend(request) {
           request.params.startDate = '2020-05-10';

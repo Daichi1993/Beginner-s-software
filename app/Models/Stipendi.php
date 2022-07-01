@@ -2,17 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use DB;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
 class Stipendi extends Model
 {
+
+    use SoftDeletes;
+    
     use HasFactory;
     protected $table = 'stipendi';
     protected $primaryKey = 'id';
-    public $timestamps = false;
+ 
+    protected $dates = ['deleted_at'];
 
     public $fillable = [
 
