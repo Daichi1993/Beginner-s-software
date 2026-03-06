@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- questo è un commento per verificare se il commit è stato eseguito correttamente -->
 @include('file_comuni.header')
 @include('file_comuni.menu') // MENU
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
