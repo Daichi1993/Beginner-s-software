@@ -39,7 +39,7 @@
                     <div class="small-box bg-info">
                         <div class="inner">
                             <h1>Azienda</h1>
-                            <h3>{{$azienda->ragione_sociale}} {{$azienda->tipologia_azienda}}</h3>
+                        <h3>{{optional($azienda)->ragione_sociale }} {{optional($azienda)->tipologia_azienda }}</h3>
 
 
 

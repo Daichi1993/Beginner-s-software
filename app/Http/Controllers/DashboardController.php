@@ -38,6 +38,7 @@ class DashboardController extends Controller {
     
         
         return view('index',get_defined_vars());
+        dd($azienda); // blocca l’esecuzione e mostra il contenuto
 
     }
 

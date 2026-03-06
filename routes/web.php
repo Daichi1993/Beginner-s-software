@@ -28,9 +28,7 @@ Route::singularResourceParameters(false); //ATTENZIONE - importante non toccare
 Route::resource('user', UtentiController::class);
  
 
-Route::get('/', function () {
-        return view('index');
-});
+Route::get('/', [DashboardController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'dashboard'], function () {
 
